@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DealDiamond CRM — The CRM for real estate investors</title>
+<meta name="description" content="DealDiamond is the AI-powered CRM for real estate investors, wholesalers, bird-doggers, fix-and-flippers, and creative finance. Capture every lead, track every deal, follow up until the diamond is yours.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpolygon points='50,6 90,50 50,94 10,50' fill='none' stroke='%23eab308' stroke-width='6'/%3E%3C/svg%3E">
+<style>
+  :root {
+    --bg: #0a0b0e;
+    --bg-soft: #101218;
+    --bg-card: #14161d;
+    --ink: #f0f2f7;
+    --muted: #a3aabc;
+    --accent: #eab308;
+    --accent-soft: #facc15;
+    --line: #23272f;
+    --max: 68rem;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  header {
+    max-width: var(--max);
+    margin: 0 auto;
+    padding: 1.4rem 1.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    color: var(--ink);
+  }
+  .brand svg { width: 1.4rem; height: 1.4rem; flex: none; }
+  .brand:hover { text-decoration: none; }
+  .brand small { font-weight: 400; color: var(--muted); letter-spacing: 0.18em; font-size: 0.6rem; text-transform: uppercase; }
+  nav { display: flex; align-items: center; gap: 1.25rem; font-size: 0.92rem; }
+  nav a { color: var(--muted); }
+  nav a:hover { color: var(--ink); text-decoration: none; }
+  .btn {
+    display: inline-block;
+    background: var(--accent);
+    color: #131313;
+    font-weight: 600;
+    border-radius: 0.5rem;
+    padding: 0.65rem 1.3rem;
+    font-size: 0.95rem;
+    transition: background 0.15s;
+  }
+  .btn:hover { background: var(--accent-soft); text-decoration: none; }
+  .btn.ghost { background: transparent; color: var(--ink); border: 1px solid var(--line); }
+  .btn.ghost:hover { border-color: var(--accent); }
+
+  main { max-width: var(--max); margin: 0 auto; padding: 0 1.25rem; }
+
+  .hero { text-align: center; padding: 5rem 0 3.5rem; }
+  .hero .kicker {
+    display: inline-block;
+    text-transform: uppercase;
+    letter-spacing: 0.26em;
+    font-size: 0.72rem;
+    color: var(--accent);
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    padding: 0.35rem 0.9rem;
+    margin-bottom: 1.6rem;
+  }
+  .hero h1 {
+    font-size: clamp(2.3rem, 6.5vw, 3.9rem);
+    line-height: 1.12;
+    letter-spacing: -0.02em;
+    margin-bottom: 1.3rem;
+  }
+  .hero p {
+    color: var(--muted);
+    max-width: 40rem;
+    margin: 0 auto 2rem;
+    font-size: 1.1rem;
+  }
+  .hero .ctas { display: flex; gap: 0.9rem; justify-content: center; flex-wrap: wrap; }
+  .hero .proof {
+    margin-top: 2.4rem;
+    color: var(--muted);
+    font-size: 0.85rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  section { padding: 3.2rem 0; }
+  .section-head {
+    text-align: center;
+    max-width: 44rem;
+    margin: 0 auto 2.2rem;
+  }
+  .section-head h2 { font-size: clamp(1.7rem, 4vw, 2.4rem); letter-spacing: -0.01em; margin-bottom: 0.8rem; }
+  .section-head p { color: var(--muted); }
+
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr)); gap: 1rem; }
+  .card {
+    background: var(--bg-card);
+    border: 1px solid var(--line);
+    border-radius: 0.8rem;
+    padding: 1.5rem;
+  }
+  .card h3 { font-size: 1.05rem; margin-bottom: 0.45rem; }
+  .card p { color: var(--muted); font-size: 0.93rem; }
+  .card .num {
+    display: inline-block;
+    color: var(--accent);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    margin-bottom: 0.5rem;
+  }
+
+  .problem { text-align: center; }
+  .problem ul { list-style: none; margin: 1.5rem auto 0; max-width: 34rem; display: grid; gap: 0.8rem; text-align: left; }
+  .problem li { background: var(--bg-soft); border: 1px solid var(--line); border-radius: 0.6rem; padding: 0.9rem 1.1rem; color: var(--muted); font-size: 0.95rem; }
+  .problem li strong { color: var(--ink); }
+
+  .audience { display: grid; grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr)); gap: 1rem; }
+  .aud {
+    background: var(--bg-card);
+    border: 1px solid var(--line);
+    border-radius: 0.8rem;
+    padding: 1.4rem 1.4rem 1.5rem;
+  }
+  .aud h3 { font-size: 1.02rem; margin-bottom: 0.4rem; color: var(--accent); }
+  .aud p { color: var(--muted); font-size: 0.92rem; }
+
+  .steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr)); gap: 1rem; counter-reset: step; }
+  .step {
+    background: var(--bg-card);
+    border: 1px solid var(--line);
+    border-radius: 0.8rem;
+    padding: 1.5rem;
+  }
+  .step .n {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.1rem;
+    height: 2.1rem;
+    border-radius: 50%;
+    background: var(--accent);
+    color: #131313;
+    font-weight: 700;
+    margin-bottom: 0.8rem;
+  }
+  .step h3 { font-size: 1.05rem; margin-bottom: 0.4rem; }
+  .step p { color: var(--muted); font-size: 0.93rem; }
+
+  .pricing .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr)); gap: 1rem; margin-top: 1.2rem; }
+  .price-card {
+    background: var(--bg-card);
+    border: 1px solid var(--line);
+    border-radius: 0.8rem;
+    padding: 1.6rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.9rem;
+  }
+  .price-card.highlight { border-color: var(--accent); }
+  .price-card .tier { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.14em; color: var(--muted); }
+  .price-card.highlight .tier { color: var(--accent); font-weight: 600; }
+  .price-card .price { font-size: 2.4rem; font-weight: 700; letter-spacing: -0.02em; }
+  .price-card .price small { font-size: 0.9rem; color: var(--muted); font-weight: 400; }
+  .price-card ul { list-style: none; display: grid; gap: 0.55rem; }
+  .price-card li { color: var(--muted); font-size: 0.92rem; padding-left: 1.2rem; position: relative; }
+  .price-card li::before { content: "◆"; position: absolute; left: 0; color: var(--accent); font-size: 0.65rem; top: 0.2rem; }
+  .price-card .btn { margin-top: auto; text-align: center; }
+  .discounts {
+    margin-top: 1.5rem;
+    background: var(--bg-soft);
+    border: 1px solid var(--line);
+    border-radius: 0.8rem;
+    padding: 1.3rem 1.5rem;
+  }
+  .discounts h3 { font-size: 1rem; margin-bottom: 0.7rem; }
+  .discounts table { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
+  .discounts th, .discounts td { text-align: left; padding: 0.45rem 0.4rem; border-bottom: 1px solid var(--line); }
+  .discounts th { color: var(--muted); font-weight: 400; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.08em; }
+  .discounts td { color: var(--muted); }
+  .discounts td:first-child { color: var(--ink); }
+  .discounts .save { color: var(--accent); }
+
+  .faq { max-width: 46rem; margin: 0 auto; display: grid; gap: 0.8rem; }
+  details { background: var(--bg-card); border: 1px solid var(--line); border-radius: 0.6rem; padding: 1rem 1.2rem; }
+  summary { cursor: pointer; font-weight: 600; font-size: 0.98rem; }
+  details p { color: var(--muted); font-size: 0.93rem; margin-top: 0.7rem; }
+
+  .final { text-align: center; padding: 4rem 0 3rem; }
+  .final h2 { font-size: clamp(1.8rem, 4.5vw, 2.6rem); letter-spacing: -0.01em; margin-bottom: 1rem; }
+  .final p { color: var(--muted); max-width: 36rem; margin: 0 auto 1.8rem; }
+
+  footer { border-top: 1px solid var(--line); margin-top: 1rem; }
+  footer .inner {
+    max-width: var(--max);
+    margin: 0 auto;
+    padding: 2rem 1.25rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem 2rem;
+    justify-content: space-between;
+    color: var(--muted);
+    font-size: 0.9rem;
+  }
+  footer a { color: var(--muted); }
+  footer a:hover { color: var(--ink); }
+
+  @media (max-width: 40rem) {
+    header { flex-direction: column; gap: 0.8rem; }
+    nav { gap: 0.9rem; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <a class="brand" href="#top">
+    <svg viewBox="0 0 100 100" aria-hidden="true"><polygon points="50,6 90,50 50,94 10,50" fill="none" stroke="#eab308" stroke-width="6"/></svg>
+    DealDiamond <small>CRM</small>
+  </a>
+  <nav>
+    <a href="#features">Features</a>
+    <a href="#audience">Who it's for</a>
+    <a href="#pricing">Pricing</a>
+    <a href="#faq">FAQ</a>
+    <a class="btn" href="#pricing">Start free</a>
+  </nav>
+</header>
+
+<main id="top">
+  <div class="hero">
+    <div class="kicker">Built for investors &middot; A Cuvane venture</div>
+    <h1>Stop losing deals to the spreadsheet.</h1>
+    <p>DealDiamond is the CRM for real estate investors &mdash; wholesalers, bird-doggers, fix-and-flippers, and the creative finance crowd. Capture every lead, track every deal, and follow up until the diamond is yours.</p>
+    <div class="ctas">
+      <a class="btn" href="#pricing">Start free</a>
+      <a class="btn ghost" href="#features">See how it works</a>
+    </div>
+    <div class="proof">Wholesale &middot; Subject-to &middot; Seller finance &middot; Assignments &middot; Fix &amp; flip &middot; Notes</div>
+  </div>
+
+  <section class="problem" id="problem">
+    <div class="section-head">
+      <h2>Your pipeline is leaking. You just can't see it.</h2>
+      <p>You didn't build your business by accident &mdash; you found deals, chased them, and closed them. But somewhere between the sticky note, the text thread, and the sixth version of the spreadsheet, most of the money you should have made is quietly dying.</p>
+    </div>
+    <ul>
+      <li><strong>Leads sit for days.</strong> By the time you call back, the seller has answered a different investor's voicemail.</li>
+      <li><strong>Follow-ups get forgotten.</strong> The one deal that mattered went cold because nothing reminded you to call.</li>
+      <li><strong>Bird-doggers go quiet.</strong> They stopped sending you deals because you never paid them &mdash; or you can't remember what you owe.</li>
+      <li><strong>Terms live in your head.</strong> Subject-to balance? Seller-finance payment? Exit trigger? The spreadsheet doesn't know, and neither do you.</li>
+      <li><strong>Deals die in email threads.</strong> Offers, counters, deadlines &mdash; scattered across five tabs and two phones.</li>
+    </ul>
+  </section>
+
+  <section id="features">
+    <div class="section-head">
+      <h2>Everything your deal flow needs, in one place</h2>
+      <p>One pipeline that follows a deal from first phone call to the closing table &mdash; and pays for the next one.</p>
+    </div>
+    <div class="grid">
+      <div class="card"><span class="num">01</span><h3>Capture every lead</h3><p>Calls, texts, emails, inbound marketing, and bird-dog submissions land in one inbox. Every lead becomes a record automatically &mdash; nothing falls through the cracks.</p></div>
+      <div class="card"><span class="num">02</span><h3>Deal pipelines for your strategies</h3><p>Wholesale, assignment, subject-to, seller finance, notes, fix-and-flip, BRRRR. Drag deals through the stages that match how you actually do business.</p></div>
+      <div class="card"><span class="num">03</span><h3>Property math that matters</h3><p>ARV, purchase price, rehab, holding costs &mdash; your projected profit on every property card. Know before you offer, not after.</p></div>
+      <div class="card"><span class="num">04</span><h3>Creative finance terms tracker</h3><p>Subject-to balances, seller-finance notes, payments, and exit triggers on the record &mdash; not in your head or a notebook.</p></div>
+      <div class="card"><span class="num">05</span><h3>Follow-up that never forgets</h3><p>Automatic text and email sequences, plus scheduled touches that remind you exactly when to call. No more dead leads from silence.</p></div>
+      <div class="card"><span class="num">06</span><h3>Bird-dog engine</h3><p>Let bird-doggers submit deals straight into your pipeline, see what they brought in, and pay them on close &mdash; without the spreadsheet dance.</p></div>
+      <div class="card"><span class="num">07</span><h3>Buyers lists</h3><p>Capture cash buyers and end buyers, tag their criteria, and match them to the deals you're ready to assign.</p></div>
+      <div class="card"><span class="num">08</span><h3>Tasks &amp; checklists</h3><p>Inspection, title, contract milestones, rehab scope &mdash; every deal runs its own checklist so nothing stalls at the table.</p></div>
+      <div class="card"><span class="num">09</span><h3>Dashboards &amp; reports</h3><p>Pipeline value, projected profit, lead response time, and where your next deal is most likely to come from &mdash; at a glance.</p></div>
+    </div>
+  </section>
+
+  <section id="audience">
+    <div class="section-head">
+      <h2>Built for the people who actually find the deals</h2>
+      <p>Start where you are. Extend to any business that runs a pipeline.</p>
+    </div>
+    <div class="audience">
+      <div class="aud"><h3>Wholesalers</h3><p>Track offers, assignments, and end buyers &mdash; and never lose a deal in the gap between contract and closing.</p></div>
+      <div class="aud"><h3>Bird-doggers</h3><p>Submit deals, follow their status, and get paid on close. Your leads actually count.</p></div>
+      <div class="aud"><h3>Fix &amp; flippers</h3><p>Property math, rehab checklists, and exit tracking &mdash; from first look to sold.</p></div>
+      <div class="aud"><h3>Creative finance</h3><p>Subject-to and seller-finance terms, payments, and exit triggers, tracked on every deal.</p></div>
+      <div class="aud"><h3>Investors &amp; teams</h3><p>Share one pipeline across your buyers, partners, and assistant &mdash; everyone sees the same truth.</p></div>
+      <div class="aud"><h3>Any business, later</h3><p>Built to extend into any pipeline-driven business. Start in real estate, grow anywhere.</p></div>
+    </div>
+  </section>
+
+  <section id="how">
+    <div class="section-head">
+      <h2>How a deal becomes a diamond</h2>
+      <p>Three steps from raw lead to closing table.</p>
+    </div>
+    <div class="steps">
+      <div class="step"><span class="n">1</span><h3>Capture</h3><p>Every call, text, email, and bird-dog submission becomes a lead record in seconds.</p></div>
+      <div class="step"><span class="n">2</span><h3>Qualify</h3><p>Run the numbers, tag the strategy, set the terms, and rank the deal in your pipeline.</p></div>
+      <div class="step"><span class="n">3</span><h3>Close &amp; collect</h3><p>Follow-up automations carry it to the table &mdash; then start hunting the next one.</p></div>
+    </div>
+  </section>
+
+  <section class="pricing" id="pricing">
+    <div class="section-head">
+      <h2>Pricing</h2>
+      <p>Start free. Pay only when the pipeline is real. Cancel anytime.</p>
+    </div>
+    <div class="cards">
+      <div class="price-card">
+        <div class="tier">Starter</div>
+        <div class="price">$0<small>/mo forever</small></div>
+        <ul>
+          <li>Up to 50 leads</li>
+          <li>1 user</li>
+          <li>Core deal pipeline</li>
+          <li>Contact &amp; property records</li>
+          <li>Community support</li>
+        </ul>
+        <a class="btn ghost" href="mailto:hello@cuvane.com?subject=DealDiamond%20Free%20Plan">Start free</a>
+      </div>
+      <div class="price-card highlight">
+        <div class="tier">Pro &middot; Most popular</div>
+        <div class="price">$59.99<small>/mo</small></div>
+        <ul>
+          <li>Unlimited leads &amp; deals</li>
+          <li>3 users</li>
+          <li>Follow-up automation (text + email)</li>
+          <li>Bird-dog engine &amp; payouts</li>
+          <li>Creative finance terms tracker</li>
+          <li>Dashboards &amp; reports</li>
+        </ul>
+        <a class="btn" href="mailto:hello@cuvane.com?subject=DealDiamond%20Pro">Start free</a>
+      </div>
+      <div class="price-card">
+        <div class="tier">Scale</div>
+        <div class="price">$99.99<small>/mo</small></div>
+        <ul>
+          <li>Everything in Pro</li>
+          <li>Unlimited users</li>
+          <li>Buyers lists &amp; assignment matching</li>
+          <li>Custom pipelines &amp; fields</li>
+          <li>API access</li>
+          <li>Priority support</li>
+        </ul>
+        <a class="btn ghost" href="mailto:hello@cuvane.com?subject=DealDiamond%20Scale">Start free</a>
+      </div>
+    </div>
+    <div class="discounts">
+      <h3>Pay up front, keep more of the deal</h3>
+      <table>
+        <tr><th>Commitment</th><th>Discount</th><th>Pro ($59.99/mo)</th><th>Scale ($99.99/mo)</th></tr>
+        <tr><td>Monthly</td><td>&mdash;</td><td>$59.99/mo</td><td>$99.99/mo</td></tr>
+        <tr><td>6 months</td><td class="save">10% off</td><td>$323.95 upfront &middot; $53.99/mo</td><td>$539.95 upfront &middot; $89.99/mo</td></tr>
+        <tr><td>Annual</td><td class="save">25% off</td><td>$539.91 upfront &middot; $44.99/mo</td><td>$899.91 upfront &middot; $74.99/mo</td></tr>
+        <tr><td>2 years</td><td class="save">45% off</td><td>$791.87 upfront &middot; $32.99/mo</td><td>$1,319.87 upfront &middot; $54.99/mo</td></tr>
+      </table>
+    </div>
+  </section>
+
+  <section id="faq">
+    <div class="section-head">
+      <h2>Questions investors ask</h2>
+    </div>
+    <div class="faq">
+      <details open>
+        <summary>What is creative finance, and does DealDiamond support it?</summary>
+        <p>Creative finance is buying real estate without a traditional bank loan &mdash; subject-to, seller financing, lease options, and partnerships. DealDiamond has a dedicated terms tracker for subject-to balances, seller-finance notes, payments, and exit triggers, so every deal's structure is on the record.</p>
+      </details>
+      <details>
+        <summary>How do bird-doggers submit deals to me?</summary>
+        <p>You give each bird-dogger a simple submit link. Their deal lands in your pipeline as a lead with them attached, so you always know what they brought in and what you owe them on close.</p>
+      </details>
+      <details>
+        <summary>Can I migrate from my spreadsheet?</summary>
+        <p>Yes. Import your leads and deals with a CSV upload &mdash; contacts, properties, values, and stages come across in one pass.</p>
+      </details>
+      <details>
+        <summary>Is there a setup fee or long-term contract?</summary>
+        <p>No setup fee and no lock-in. You pay monthly, or take a discount for paying up front. Cancel anytime.</p>
+      </details>
+      <details>
+        <summary>Will this work for non-real-estate businesses?</summary>
+        <p>DealDiamond is built for real estate first, and designed to extend to any pipeline-driven business &mdash; agencies, services, B2B sales &mdash; when you're ready to grow.</p>
+      </details>
+    </div>
+  </section>
+
+  <div class="final">
+    <h2>The mine never stops producing. Neither should your pipeline.</h2>
+    <p>Raw leads go in. Closed deals come out. Start free and keep the diamonds.</p>
+    <a class="btn" href="mailto:hello@cuvane.com?subject=DealDiamond%20-%20Start%20Free">Start free</a>
+  </div>
+</main>
+
+<footer>
+  <div class="inner">
+    <span>&copy; 2026 DealDiamond CRM</span>
+    <span>A <a href="https://mikepflanagan.github.io/cuvane/">Cuvane</a> venture</span>
+  </div>
+</footer>
+
+</body>
+</html>
