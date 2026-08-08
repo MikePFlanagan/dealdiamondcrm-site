@@ -158,16 +158,6 @@
   .problem li { background: var(--bg-soft); border: 1px solid var(--line); border-radius: 0.6rem; padding: 0.9rem 1.1rem; color: var(--muted); font-size: 0.95rem; }
   .problem li strong { color: var(--ink); }
 
-  .audience { display: grid; grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr)); gap: 1rem; }
-  .aud {
-    background: var(--bg-card);
-    border: 1px solid var(--line);
-    border-radius: 0.8rem;
-    padding: 1.4rem 1.4rem 1.5rem;
-  }
-  .aud h3 { font-size: 1.02rem; margin-bottom: 0.4rem; color: var(--accent); }
-  .aud p { color: var(--muted); font-size: 0.92rem; }
-
   .steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr)); gap: 1rem; counter-reset: step; }
   .step {
     background: var(--bg-card);
@@ -320,13 +310,13 @@
       <h2>Built for the people who actually find the deals</h2>
       <p>Start where you are. Extend to any business that runs a pipeline.</p>
     </div>
-    <div class="audience">
-      <div class="aud"><h3>Wholesalers</h3><p>Track offers, assignments, and end buyers &mdash; and never lose a deal in the gap between contract and closing.</p></div>
-      <div class="aud"><h3>Bird-doggers</h3><p>Submit deals, follow their status, and get paid on close. Your leads actually count.</p></div>
-      <div class="aud"><h3>Fix &amp; flippers</h3><p>Property math, rehab checklists, and exit tracking &mdash; from first look to sold.</p></div>
-      <div class="aud"><h3>Creative finance</h3><p>Subject-to and seller-finance terms, payments, and exit triggers, tracked on every deal.</p></div>
-      <div class="aud"><h3>Investors &amp; teams</h3><p>Share one pipeline across your buyers, partners, and assistant &mdash; everyone sees the same truth.</p></div>
-      <div class="aud"><h3>Any business, later</h3><p>Built to extend into any pipeline-driven business. Start in real estate, grow anywhere.</p></div>
+    <div class="grid">
+      <div class="card"><h3>Wholesalers</h3><p>Track offers, assignments, and end buyers &mdash; and never lose a deal in the gap between contract and closing.</p></div>
+      <div class="card"><h3>Bird-doggers</h3><p>Submit deals, follow their status, and get paid on close. Your leads actually count.</p></div>
+      <div class="card"><h3>Fix &amp; flippers</h3><p>Property math, rehab checklists, and exit tracking &mdash; from first look to sold.</p></div>
+      <div class="card"><h3>Creative finance</h3><p>Subject-to and seller-finance terms, payments, and exit triggers, tracked on every deal.</p></div>
+      <div class="card"><h3>Investors &amp; teams</h3><p>Share one pipeline across your buyers, partners, and assistant &mdash; everyone sees the same truth.</p></div>
+      <div class="card"><h3>Any business, later</h3><p>Built to extend into any pipeline-driven business. Start in real estate, grow anywhere.</p></div>
     </div>
   </section>
 
