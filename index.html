@@ -3,25 +3,38 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>DealDiamond CRM — The CRM for real estate investors</title>
-<meta name="description" content="DealDiamond is the AI-powered CRM for real estate investors, wholesalers, bird-doggers, fix-and-flippers, and creative finance. Capture every lead, track every deal, follow up until the diamond is yours.">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpolygon points='50,6 90,50 50,94 10,50' fill='none' stroke='%23eab308' stroke-width='6'/%3E%3C/svg%3E">
+<title>PropDealFire — Forge deals. Close like a diamond.</title>
+<meta name="description" content="PropDealFire is the AI-powered real estate operating system for wholesalers, bird-doggers, fix-and-flippers, and creative finance. Heat up your pipeline, capture every lead, track every deal, and follow up until the diamond is yours.">
+<link rel="canonical" href="https://propdealfire.com/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="PropDealFire">
+<meta property="og:title" content="PropDealFire — Forge deals. Close like a diamond.">
+<meta property="og:description" content="The real estate operating system for wholesalers, bird-doggers, flippers, and creative finance. Heat up your pipeline, capture every lead, track every deal, and follow up until the diamond is yours.">
+<meta property="og:url" content="https://propdealfire.com/">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="PropDealFire — Forge deals. Close like a diamond.">
+<meta name="twitter:description" content="The real estate operating system for wholesalers, bird-doggers, flippers, and creative finance. Forge deals, close like a diamond.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpolygon points='50,6 90,50 50,94 10,50' fill='none' stroke='%23f97316' stroke-width='6'/%3E%3C/svg%3E">
 <style>
   :root {
     --bg: #0a0b0e;
-    --bg-soft: #101218;
-    --bg-card: #14161d;
-    --ink: #f0f2f7;
-    --muted: #a3aabc;
-    --accent: #eab308;
-    --accent-soft: #facc15;
-    --line: #23272f;
+    --bg-soft: #12100e;
+    --bg-card: #16120f;
+    --ink: #f5f1ec;
+    --muted: #a8a096;
+    --accent: #f97316;
+    --accent-soft: #fb923c;
+    --accent-2: #ef4444;
+    --accent-3: #fbbf24;
+    --line: #2a211a;
     --max: 68rem;
   }
   * { margin: 0; padding: 0; box-sizing: border-box; }
   html { scroll-behavior: smooth; }
   body {
-    background: var(--bg);
+    background:
+      radial-gradient(1200px 500px at 50% -120px, rgba(249,115,22,0.14), transparent 60%),
+      var(--bg);
     color: var(--ink);
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     line-height: 1.65;
@@ -55,27 +68,29 @@
   nav a:hover { color: var(--ink); text-decoration: none; }
   .btn {
     display: inline-block;
-    background: var(--accent);
-    color: #131313;
+    background: linear-gradient(90deg, var(--accent), var(--accent-2));
+    color: #fff;
     font-weight: 600;
     border-radius: 0.5rem;
     padding: 0.65rem 1.3rem;
     font-size: 0.95rem;
-    transition: background 0.15s;
+    box-shadow: 0 8px 24px rgba(249,115,22,0.28);
+    transition: filter 0.15s, transform 0.15s;
   }
-  .btn:hover { background: var(--accent-soft); text-decoration: none; }
-  .btn.ghost { background: transparent; color: var(--ink); border: 1px solid var(--line); }
+  .btn:hover { filter: brightness(1.1); text-decoration: none; transform: translateY(-1px); }
+  .btn.ghost { background: transparent; color: var(--ink); border: 1px solid var(--line); box-shadow: none; }
   .btn.ghost:hover { border-color: var(--accent); }
 
   main { max-width: var(--max); margin: 0 auto; padding: 0 1.25rem; }
 
   .hero { text-align: center; padding: 5rem 0 3.5rem; }
+  .hero .emoji { font-size: 2.6rem; margin-bottom: 1rem; }
   .hero .kicker {
     display: inline-block;
     text-transform: uppercase;
     letter-spacing: 0.26em;
     font-size: 0.72rem;
-    color: var(--accent);
+    color: var(--accent-soft);
     border: 1px solid var(--line);
     border-radius: 999px;
     padding: 0.35rem 0.9rem;
@@ -86,6 +101,13 @@
     line-height: 1.12;
     letter-spacing: -0.02em;
     margin-bottom: 1.3rem;
+  }
+  .hero h1 .fire {
+    background: linear-gradient(90deg, var(--accent), var(--accent-2), var(--accent-3));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
   }
   .hero p {
     color: var(--muted);
@@ -117,7 +139,9 @@
     border: 1px solid var(--line);
     border-radius: 0.8rem;
     padding: 1.5rem;
+    transition: border-color 0.15s, transform 0.15s;
   }
+  .card:hover { border-color: rgba(249,115,22,0.5); transform: translateY(-2px); }
   .card h3 { font-size: 1.05rem; margin-bottom: 0.45rem; }
   .card p { color: var(--muted); font-size: 0.93rem; }
   .card .num {
@@ -158,8 +182,8 @@
     width: 2.1rem;
     height: 2.1rem;
     border-radius: 50%;
-    background: var(--accent);
-    color: #131313;
+    background: linear-gradient(135deg, var(--accent), var(--accent-2));
+    color: #fff;
     font-weight: 700;
     margin-bottom: 0.8rem;
   }
@@ -176,7 +200,7 @@
     flex-direction: column;
     gap: 0.9rem;
   }
-  .price-card.highlight { border-color: var(--accent); }
+  .price-card.highlight { border-color: var(--accent); box-shadow: 0 0 40px rgba(249,115,22,0.15); }
   .price-card .tier { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.14em; color: var(--muted); }
   .price-card.highlight .tier { color: var(--accent); font-weight: 600; }
   .price-card .price { font-size: 2.4rem; font-weight: 700; letter-spacing: -0.02em; }
@@ -234,8 +258,8 @@
 
 <header>
   <a class="brand" href="#top">
-    <svg viewBox="0 0 100 100" aria-hidden="true"><polygon points="50,6 90,50 50,94 10,50" fill="none" stroke="#eab308" stroke-width="6"/></svg>
-    DealDiamond <small>CRM</small>
+    <svg viewBox="0 0 100 100" aria-hidden="true"><polygon points="50,6 90,50 50,94 10,50" fill="none" stroke="#f97316" stroke-width="6"/></svg>
+    PropDealFire <small>real estate OS</small>
   </a>
   <nav>
     <a href="#features">Features</a>
@@ -248,9 +272,10 @@
 
 <main id="top">
   <div class="hero">
+    <div class="emoji">🔥💎</div>
     <div class="kicker">Built for investors &middot; A Cuvane venture</div>
-    <h1>Stop losing deals to the spreadsheet.</h1>
-    <p>DealDiamond is the CRM for real estate investors &mdash; wholesalers, bird-doggers, fix-and-flippers, and the creative finance crowd. Capture every lead, track every deal, and follow up until the diamond is yours.</p>
+    <h1>Stop losing deals to the spreadsheet. <span class="fire">Forge them.</span></h1>
+    <p>PropDealFire is the operating system for real estate investors &mdash; wholesalers, bird-doggers, fix-and-flippers, and the creative finance crowd. Capture every lead, heat up your pipeline, track every deal, and follow up until the diamond is yours.</p>
     <div class="ctas">
       <a class="btn" href="offer.html#pro">Start free</a>
       <a class="btn ghost" href="#features">See how it works</a>
@@ -311,8 +336,8 @@
       <p>Three steps from raw lead to closing table.</p>
     </div>
     <div class="steps">
-      <div class="step"><span class="n">1</span><h3>Capture</h3><p>Every call, text, email, and bird-dog submission becomes a lead record in seconds.</p></div>
-      <div class="step"><span class="n">2</span><h3>Qualify</h3><p>Run the numbers, tag the strategy, set the terms, and rank the deal in your pipeline.</p></div>
+      <div class="step"><span class="n">1</span><h3>Ignite</h3><p>Every call, text, email, and bird-dog submission becomes a lead record in seconds.</p></div>
+      <div class="step"><span class="n">2</span><h3>Forge</h3><p>Run the numbers, tag the strategy, set the terms, and rank the deal in your pipeline.</p></div>
       <div class="step"><span class="n">3</span><h3>Close &amp; collect</h3><p>Follow-up automations carry it to the table &mdash; then start hunting the next one.</p></div>
     </div>
   </section>
@@ -382,8 +407,8 @@
     </div>
     <div class="faq">
       <details open>
-        <summary>What is creative finance, and does DealDiamond support it?</summary>
-        <p>Creative finance is buying real estate without a traditional bank loan &mdash; subject-to, seller financing, lease options, and partnerships. DealDiamond has a dedicated terms tracker for subject-to balances, seller-finance notes, payments, and exit triggers, so every deal's structure is on the record.</p>
+        <summary>What is creative finance, and does PropDealFire support it?</summary>
+        <p>Creative finance is buying real estate without a traditional bank loan &mdash; subject-to, seller financing, lease options, and partnerships. PropDealFire has a dedicated terms tracker for subject-to balances, seller-finance notes, payments, and exit triggers, so every deal's structure is on the record.</p>
       </details>
       <details>
         <summary>How do bird-doggers submit deals to me?</summary>
@@ -399,7 +424,7 @@
       </details>
       <details>
         <summary>Will this work for non-real-estate businesses?</summary>
-        <p>DealDiamond is built for real estate first, and designed to extend to any pipeline-driven business &mdash; agencies, services, B2B sales &mdash; when you're ready to grow.</p>
+        <p>PropDealFire is built for real estate first, and designed to extend to any pipeline-driven business &mdash; agencies, services, B2B sales &mdash; when you're ready to grow.</p>
       </details>
     </div>
   </section>
@@ -413,8 +438,8 @@
 
 <footer>
   <div class="inner">
-    <span>&copy; 2026 DealDiamond CRM</span>
-    <span>A <a href="https://mikepflanagan.github.io/cuvane/">Cuvane</a> venture</span>
+    <span>&copy; 2026 PropDealFire</span>
+    <span>A <a href="https://cuvane.com/">Cuvane</a> venture</span>
   </div>
 </footer>
 
